@@ -7,7 +7,7 @@ const App: React.FC = () => {
     <View style={{ flex: 1 }}>
       {/* Velkomsttekst */}
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Welcome to my React Native App!</Text>
+        <Text>Welcome to my React Native App! Hej Eva! </Text>
       </View>
 
       {/* GiraffeList komponenten */}
