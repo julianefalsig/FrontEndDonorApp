@@ -29,7 +29,7 @@ const App: React.FC = () => {
       <View
         style={{ flex: 2, justifyContent: "flex-start", alignItems: "center" }}
       >
-        <QualificationStep />
+       <QualificationStep /> 
       </View>
     </View>
   );

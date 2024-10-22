@@ -4,16 +4,26 @@ import { View, Text, FlatList } from "react-native";
 import QualificationStepStore from "../app/stores/QualificationStepStore";
 
 const QualificationStep = observer(() => {
+  const { donorStep } = QualificationStepStore;
+
   return (
     <View>
-      <Text>The fetched donor:</Text>
-      <FlatList
-        data={QualificationStepStore.donorStep}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => <Text>{item}</Text>}
-      />
+      {donorStep.length > 0 ? (
+        <FlatList
+          data={donorStep}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item }) => (
+            <View>
+              <Text>{`Donor: ${item.firstName}`}</Text>
+              <Text>{`Step Number: ${item.currentStep}`}</Text>
+              <Text>{`Step Title: ${item.stepTitle}`}</Text>
+            </View>
+          )}
+        />
+      ) : (
+        <Text>Loading donor step...</Text>
+      )}
     </View>
   );
 });
-
-export default QualificationStepStore;
+export default QualificationStep;
