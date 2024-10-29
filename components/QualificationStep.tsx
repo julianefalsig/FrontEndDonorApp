@@ -17,6 +17,7 @@ const QualificationStep = observer(() => {
               <Text>{`Donor: ${item.firstName}`}</Text>
               <Text>{`Step Number: ${item.currentStep}`}</Text>
               <Text>{`Step Title: ${item.stepTitle}`}</Text>
+              <Text>{`Is Completed: ${item.isCompleted}`}</Text>
             </View>
           )}
         />
@@ -27,3 +28,5 @@ const QualificationStep = observer(() => {
   );
 });
 export default QualificationStep;
+
+//State - farven på det givne komponent skal være afhængig af state

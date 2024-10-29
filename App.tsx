@@ -1,38 +1,30 @@
 import React from "react";
-import { View, Text } from "react-native";
-import GiraffeList from "./components/GiraffeList"; // Import GiraffeList komponenten'
-import DonorList from "./components/DonorList";
-import QualificationStep from "./components/QualificationStep";
+import { View, ImageBackground, StyleSheet, Image } from "react-native";
+import HomeScreen from "./components/HomeScreen";
+import Background from "./components/Background";
+import Footer from "./components/Footer";
+import StepComponent from "./components/StepComponent";
+import { ScrollView } from "react-native";
+import Header from "./components/Header";
 
 const App: React.FC = () => {
   return (
-    <View style={{ flex: 1 }}>
-      {/* Velkomsttekst */}
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Velkommen til European Speam Banks Donor site! </Text>
-      </View>
-
-      {/* GiraffeList komponenten */}
-      <View
-        style={{ flex: 2, justifyContent: "flex-start", alignItems: "center" }}
-      >
-        <GiraffeList />
-      </View>
-      {/* DonorList komponenten */}
-      <View
-        style={{ flex: 2, justifyContent: "flex-start", alignItems: "center" }}
-      >
-        <DonorList />
-      </View>
-
-      {/* qualificationStep komponenten */}
-      <View
-        style={{ flex: 2, justifyContent: "flex-start", alignItems: "center" }}
-      >
-       <QualificationStep /> 
-      </View>
-    </View>
+    <Background>
+      <Header />
+      <HomeScreen />
+      <Footer />
+    </Background>
   );
 };
 
 export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "flex-end", // Sørg for, at footeren placeres nederst
+  },
+  content: {
+    padding: 16,
+  },
+});
