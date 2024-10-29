@@ -8,44 +8,46 @@ import StepComponent from "./StepComponent";
 const HomePage: React.FC = () => {
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.content}>
+      {/* <ScrollView contentContainerStyle={styles.content}>
         <StepComponent
           stepNumber={1}
           title={"Sample analysis"}
           description={"Your samples have been approved"}
           iconName={"science"}
-          isActive={true}
+          isCompleted={true}
         />
         <StepComponent
           stepNumber={2}
           title={"Interview & information"}
           description={"Completed by the coordinator."}
           iconName={"people"}
-          isActive={false}
+          isCompleted={false}
         />
         <StepComponent
           stepNumber={3}
           title={"Medical examination"}
           description={"Passed by doctor."}
           iconName={"doctor"}
-          isActive={false}
+          isCompleted={false}
         />
         <StepComponent
           stepNumber={4}
           title={"Blood and urin test"}
           description={"Analysis completed."}
           iconName={"bloodtype"}
-          isActive={false}
+          isCompleted={false}
         />
         <StepComponent
           stepNumber={5}
           title={"Donor profile"}
           description={"Profile finalized."}
           iconName={"person"}
-          isActive={false}
+          isCompleted={false}
         />
+      </ScrollView> */}
+      <ScrollView contentContainerStyle={styles.content}>
+        <QualificationStep />
       </ScrollView>
-      {/* <QualificationStep /> */}
       {/* Tilføj flere elementer eller indhold til homescreen her */}
     </View>
   );

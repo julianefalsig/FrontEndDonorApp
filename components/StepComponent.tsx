@@ -7,7 +7,7 @@ interface StepComponentProps {
   title: string;
   description: string;
   iconName: string;
-  isActive?: boolean; // Hvis true, ændrer det stil for det aktive trin
+  isCompleted: boolean; // bruger isCompleted direkte for at bestemme, om trinnet er aktivt
 }
 
 const StepComponent: React.FC<StepComponentProps> = ({
@@ -15,7 +15,7 @@ const StepComponent: React.FC<StepComponentProps> = ({
   title,
   description,
   iconName,
-  isActive = false,
+  isCompleted,
 }) => {
   return (
     <View style={styles.stepContainer}>
@@ -23,7 +23,7 @@ const StepComponent: React.FC<StepComponentProps> = ({
       {stepNumber > 1 && <View style={styles.line} />}
       <TouchableOpacity style={styles.contentContainer}>
         {/* Cirkel med ikon og stepnummer */}
-        <View style={[styles.circle, isActive && styles.activeCircle]}>
+        <View style={[styles.circle, isCompleted && styles.activeCircle]}>
           <Icon name={iconName} size={24} color="#4f4f4f" />
           <Text style={styles.stepText}>Step {stepNumber}</Text>
         </View>
