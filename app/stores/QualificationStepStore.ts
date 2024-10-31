@@ -8,7 +8,7 @@ interface DonorQualificationStepDTO {
     firstName: string;
     currentStep: number;
     stepTitle: string;
-    isCompleted: boolean;
+    completed: boolean;
     iconName: string;
 }
 
@@ -24,6 +24,7 @@ class QualificationStepStore {
         try {
             const response = await fetch(baseUrl + "api/qualificationstep");
             const json: DonorQualificationStepDTO[] = await response.json();
+            console.log("Fetched data", json);
             runInAction(() => {
                 this.donorStep = json;
             });

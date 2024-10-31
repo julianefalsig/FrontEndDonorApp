@@ -31,20 +31,20 @@ const QualificationStep = observer(() => {
           data={donorStep}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
-            <View>
+            /*             <View>
               <Text>{`Donor: ${item.firstName}`}</Text>
               <Text>{`Step Number: ${item.currentStep}`}</Text>
               <Text>{`Step Title: ${item.stepTitle}`}</Text>
-              <Text>{`Is Completed: ${item.isCompleted}`}</Text>
-            </View>
+              <Text>{`Is Completed: ${item.completed}`}</Text>
+            </View> */
 
-            // <StepComponent
-            //   stepNumber={item.currentStep} // Trinnummer fra databasen
-            //   title={item.stepTitle} // Titel fra databasen
-            //   description={`Beskrivelse af trin ${item.currentStep}`} // Beskrivelse, som kan være dynamisk
-            //   isCompleted={item.isCompleted} // Aktiv status fra databasen
-            //   iconName={getIconName(item.currentStep)} // Dynamisk ikonnavn
-            // />
+            <StepComponent
+              stepNumber={item.currentStep} // Trinnummer fra databasen
+              title={item.stepTitle} // Titel fra databasen
+              description={`Beskrivelse af trin ${item.currentStep}`} // Beskrivelse, som kan være dynamisk
+              isCompleted={item.completed} // Aktiv status fra databasen
+              iconName={getIconName(item.currentStep)} // Dynamisk ikonnavn
+            />
           )}
         />
       ) : (

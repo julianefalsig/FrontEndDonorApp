@@ -8,7 +8,7 @@ import StepComponent from "./StepComponent";
 const HomePage: React.FC = () => {
   return (
     <View style={styles.container}>
-      {/* <ScrollView contentContainerStyle={styles.content}>
+      {/*       <ScrollView contentContainerStyle={styles.content}>
         <StepComponent
           stepNumber={1}
           title={"Sample analysis"}
