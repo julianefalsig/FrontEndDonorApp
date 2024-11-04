@@ -1,8 +1,13 @@
+import { NavigationProp } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons"; // Hvis du bruger Expo, kan du også bruge: import { MaterialIcons } from '@expo/vector-icons';
+import { RootStackParamList } from "./styles/types";
 
 const Footer: React.FC = () => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>(); // Tilføj typer her
+
   return (
     <View style={styles.footer}>
       {/* Menu Section */}
@@ -12,7 +17,10 @@ const Footer: React.FC = () => {
       </TouchableOpacity>
 
       {/* Appointments Section */}
-      <TouchableOpacity style={styles.iconContainer}>
+      <TouchableOpacity
+        style={styles.iconContainer}
+        onPress={() => navigation.navigate("Details")} // Naviger til "Details"-skærmen
+      >
         <Icon name="event" size={30} color="#4f4f4f" />
         <Text style={styles.iconText}>Appointments</Text>
       </TouchableOpacity>

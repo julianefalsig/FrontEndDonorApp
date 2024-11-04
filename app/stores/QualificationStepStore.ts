@@ -24,7 +24,7 @@ class QualificationStepStore {
         try {
             const response = await fetch(baseUrl + "api/qualificationstep");
             const json: DonorQualificationStepDTO[] = await response.json();
-            console.log("Fetched data", json);
+            // console.log("Fetched data", json);
             runInAction(() => {
                 this.donorStep = json;
             });

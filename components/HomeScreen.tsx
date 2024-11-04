@@ -1,14 +1,29 @@
 import React from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import styles from "./styles/HomeScreen.styles";
 import GiraffeList from "./GiraffeList";
 import QualificationStep from "./QualificationStep";
 import StepComponent from "./StepComponent";
+import { useNavigation } from "@react-navigation/native";
 
-const HomePage: React.FC = () => {
+const HomeScreen: React.FC = () => {
+  // Tilføjelse af navigation hook der giver adgang til navigation objektet, så der kan navigeres til andre skærme
+  // const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      {/*       <ScrollView contentContainerStyle={styles.content}>
+      <ScrollView contentContainerStyle={styles.content}>
+        <QualificationStep />
+        {/* Tilføj en knap, der navigerer til "Details" skærmen */}
+      </ScrollView>
+      {/* Vi kan senere tilføje flere elementer til Homepage her */}
+    </View>
+  );
+};
+
+export default HomeScreen;
+
+/*//var tidligere indsat i view       
+  <ScrollView contentContainerStyle={styles.content}>
         <StepComponent
           stepNumber={1}
           title={"Sample analysis"}
@@ -44,13 +59,4 @@ const HomePage: React.FC = () => {
           iconName={"person"}
           isCompleted={false}
         />
-      </ScrollView> */}
-      <ScrollView contentContainerStyle={styles.content}>
-        <QualificationStep />
-      </ScrollView>
-      {/* Tilføj flere elementer eller indhold til homescreen her */}
-    </View>
-  );
-};
-
-export default HomePage;
+      </ScrollView> */

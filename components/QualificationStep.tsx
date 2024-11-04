@@ -16,7 +16,7 @@ const QualificationStep = observer(() => {
       case 2:
         return "people"; // Ikon for trin 2
       case 3:
-        return "medic"; // Ikon for trin 3
+        return "hospital"; // Ikon for trin 3
       case 4:
         return "bloodtype"; // Ikon for trin 3
       default:
